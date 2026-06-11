@@ -3,8 +3,8 @@
 class TerminalSwitcher < Formula
   desc "Menu-bar switcher for Apple Terminal windows, labeled by project"
   homepage "https://github.com/searayca/terminal-switcher"
-  url "https://github.com/searayca/terminal-switcher/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "3041884217c0a5ed084c58e6fa317c2ddbe925c362e4ac510d048ffce9c682d9"
+  url "https://github.com/searayca/terminal-switcher/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "eeb3cba801c2b95ff2fad7732348ddcb6b2c14970ada5a18e6a78cd3ba76a1c4"
   license :cannot_represent
 
   depends_on macos: :ventura
@@ -17,6 +17,7 @@ class TerminalSwitcher < Formula
     app = prefix/"Terminal Switcher.app"
     (app/"Contents/MacOS").install ".build/release/TerminalSwitcher"
     (app/"Contents").install "Info.plist"
+    (app/"Contents/Resources").install "Resources/AppIcon.icns"
 
     # Ad-hoc sign so the macOS Automation permission can attach to a
     # stable code identity.
