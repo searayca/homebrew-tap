@@ -3,10 +3,9 @@
 class TerminalSwitcher < Formula
   desc "Menu-bar switcher for Apple Terminal windows, labeled by project"
   homepage "https://github.com/searayca/terminal-switcher"
-  url "https://github.com/searayca/terminal-switcher/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "966e79682f44c807d3fff15dcd9231428b6eea7c6fe6f8d977655675d70198e5"
-  # v1.0.1 tarball is MIT; switch to :cannot_represent (Coffee Right License) when bumping past 1.0.1
-  license "MIT"
+  url "https://github.com/searayca/terminal-switcher/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "0d6aa0cb237635cac15b9e303cfef951a34c577cff7d69302140604a60d74318"
+  license :cannot_represent
 
   depends_on macos: :ventura
 
