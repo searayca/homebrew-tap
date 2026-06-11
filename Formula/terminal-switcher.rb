@@ -41,7 +41,7 @@ class TerminalSwitcher < Formula
   end
 
   test do
-    assert_predicate prefix/"Terminal Switcher.app/Contents/MacOS/TerminalSwitcher", :exist?
-    assert_predicate prefix/"Terminal Switcher.app/Contents/Info.plist", :exist?
+    assert_path_exists prefix/"Terminal Switcher.app/Contents/MacOS/TerminalSwitcher"
+    assert_path_exists prefix/"Terminal Switcher.app/Contents/Info.plist"
   end
 end
