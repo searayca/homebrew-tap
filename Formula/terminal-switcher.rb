@@ -1,10 +1,10 @@
-# Copyright (c) 2025-2026 Greg Ames/Ames & Associates. Licensed under the MIT License — see LICENSE.
+# Copyright (c) 2025-2026 Greg Ames/Ames & Associates. Licensed under the Coffee Right License — see LICENSE.
 # Project: Terminal Switcher | Filename: terminal-switcher.rb
 class TerminalSwitcher < Formula
   desc "Menu-bar switcher for Apple Terminal windows, labeled by project"
   homepage "https://github.com/searayca/terminal-switcher"
-  url "https://github.com/searayca/terminal-switcher/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "8dcaa064d64bce28d5104d39a32ea7f7c7e2e937221a565f9af30c1fba29857e"
+  url "https://github.com/searayca/terminal-switcher/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "3041884217c0a5ed084c58e6fa317c2ddbe925c362e4ac510d048ffce9c682d9"
   license :cannot_represent
 
   depends_on macos: :ventura
