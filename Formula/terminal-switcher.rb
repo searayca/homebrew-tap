@@ -5,6 +5,7 @@ class TerminalSwitcher < Formula
   homepage "https://github.com/searayca/terminal-switcher"
   url "https://github.com/searayca/terminal-switcher/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "966e79682f44c807d3fff15dcd9231428b6eea7c6fe6f8d977655675d70198e5"
+  # v1.0.1 tarball is MIT; switch to :cannot_represent (Coffee Right License) when bumping past 1.0.1
   license "MIT"
 
   depends_on macos: :ventura
