@@ -3,25 +3,22 @@
 class TerminalSwitcher < Formula
   desc "Menu-bar switcher for Apple Terminal windows, labeled by project"
   homepage "https://github.com/searayca/terminal-switcher"
-  url "https://github.com/searayca/terminal-switcher/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "2fb2da819d18aeb81d98038ca6116c421424abc1c6c330a04b606f4aea28d632"
+  url "https://github.com/searayca/terminal-switcher/releases/download/v1.0.0/Terminal-Switcher-v1.0.0-universal.zip"
+  sha256 "e4d93c8c1a592d2d2e6e476ff44303d800779e959b04692e7c29c9ec70d3b46e"
   license :cannot_represent
 
   depends_on macos: :ventura
 
   def install
-    # --disable-sandbox is required because Homebrew's build sandbox
-    # conflicts with SwiftPM's own sandbox.
-    system "swift", "build", "--disable-sandbox", "-c", "release"
-
-    app = prefix/"Terminal Switcher.app"
-    (app/"Contents/MacOS").install ".build/release/TerminalSwitcher"
-    (app/"Contents").install "Info.plist"
-    (app/"Contents/Resources").install "Resources/AppIcon.icns"
-
-    # Ad-hoc sign so the macOS Automation permission can attach to a
-    # stable code identity.
-    system "codesign", "--force", "--sign", "-", app
+    # The release zip contains a prebuilt universal (arm64 + x86_64)
+    # "Terminal Switcher.app" bundle. Homebrew strips a lone top-level
+    # directory when unpacking, so the working dir is usually the bundle's
+    # own contents — reassemble the .app in that case.
+    if File.exist?("Terminal Switcher.app")
+      prefix.install "Terminal Switcher.app"
+    else
+      (prefix/"Terminal Switcher.app").install Dir["*"]
+    end
   end
 
   def caveats
@@ -42,7 +39,9 @@ class TerminalSwitcher < Formula
   end
 
   test do
-    assert_path_exists prefix/"Terminal Switcher.app/Contents/MacOS/TerminalSwitcher"
+    bin_path = prefix/"Terminal Switcher.app/Contents/MacOS/TerminalSwitcher"
+    assert_path_exists bin_path
+    assert_predicate bin_path, :executable?
     assert_path_exists prefix/"Terminal Switcher.app/Contents/Info.plist"
   end
 end
