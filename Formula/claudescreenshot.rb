@@ -1,7 +1,7 @@
 # Copyright (c) 2025-2026 Greg Ames/Ames & Associates. Licensed under the Coffee Right License — see LICENSE.
 # Project: ClaudeScreenShot | Filename: claudescreenshot.rb
 class Claudescreenshot < Formula
-  desc "Menu-bar app that copies each new screenshot's file path to the clipboard for Claude Code"
+  desc "Menu-bar app that puts each new screenshot's path on the clipboard"
   homepage "https://github.com/searayca/claudescreenshot"
   url "https://github.com/searayca/claudescreenshot/releases/download/v1.0.0/ClaudeScreenShot-1.0.0.zip"
   sha256 "4c183b7628f4f431ee90483cda7e7b71bf6a6f9ab77f2de866a5b923e886b229"
